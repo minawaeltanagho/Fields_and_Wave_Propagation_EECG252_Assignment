@@ -8,13 +8,6 @@ Fields and Wave Propagation - EECG252
 # Assignment 1
 
 Submitted for EECG252 Assignment
-Under the supervision of **Dr. Mohamed A. Nasr**
-
-| Code | Sec | BN | Name |
-|------|-----|----|------|
-| 91240804 | 4 | 13 | مينا وائل تناغو فهمى سدراك |
-
----
 
 ## Contents
 
