@@ -1,13 +1,21 @@
 # Cairo University – Faculty of Engineering
-**Electronics and Electrical Communications**
-Mainstream – Second Year
+
+**Electronics and Electrical Communications**  
+Mainstream – Second Year  
 Fields and Wave Propagation - EECG252
 
 ---
 
 # Assignment 1
 
-Submitted for EECG252 Assignment
+Submitted for EECG252 Assignment  
+Under the supervision of **Dr. Mohamed A. Nasr**
+
+| Code | Sec | BN | Name |
+|------|-----|----|------|
+| 91240804 | 4 | 13 | مينا وائل تناغو فهمى سدراك |
+
+---
 
 ## Contents
 
@@ -28,129 +36,173 @@ Submitted for EECG252 Assignment
 
 > **Assuming Q = 2 nC, D = 5 m.**
 
-*Figure 1.1: The problem illustration.*
-
 ### 1.1 Hand Analysis
 
 #### 1.1.1 Finding Electrical Potential Everywhere
 
 We will start the hand analysis by performing the method of images.
 
-*Figure 1.2: Method of Images.*
+We know that the Electrical Field of a point charge (Q) at any point is:
 
-We know that the Electrical Field of point charge (Q) at any point is:
-
-$$\vec{E} = \frac{Q}{4\pi\varepsilon_0 r^2} \hat{r} \tag{1.01}$$
+```
+        Q
+E = ———————— r̂        ...(1.01)
+     4πε₀r²
+```
 
 For the main point charge (Q), the Electrical Field is:
 
-$$\vec{E_1} = \frac{Q}{4\pi\varepsilon_0 r_1^2} \hat{r_1} \tag{1.02}$$
+```
+         Q
+E₁ = ———————— r̂₁       ...(1.02)
+      4πε₀r₁²
+```
 
 Where:
 
-$$|r_1| = \sqrt{x^2 + y^2 + (z-D)^2} \tag{1.03}$$
+```
+|r₁| = √( x² + y² + (z − D)² )      ...(1.03)
+```
 
-For the image point charge (–Q), the Electrical Field is:
+For the image point charge (−Q), the Electrical Field is:
 
-$$\vec{E_2} = \frac{-Q}{4\pi\varepsilon_0 r_2^2} \hat{r_2} \tag{1.04}$$
+```
+         −Q
+E₂ = ———————— r̂₂       ...(1.04)
+      4πε₀r₂²
+```
 
 Where:
 
-$$|r_2| = \sqrt{x^2 + y^2 + (z+D)^2} \tag{1.05}$$
+```
+|r₂| = √( x² + y² + (z + D)² )      ...(1.05)
+```
 
 To get the total Electrical Field:
 
-$$\vec{E_T} = \vec{E_1} + \vec{E_2} \tag{1.06}$$
+```
+E_T = E₁ + E₂           ...(1.06)
 
-$$E_T = \frac{Q}{4\pi\varepsilon_0} \left(\frac{1}{r_1^2} - \frac{1}{r_2^2}\right) \hat{E} \tag{1.07}$$
+        Q     ⎛  1      1  ⎞
+E_T = ———— × ⎜ ——— − ——— ⎟ Ê    ...(1.07)
+       4πε₀  ⎝  r₁²   r₂² ⎠
+```
 
 We know that:
 
-$$\varphi = -\int E_T \cdot dl \tag{1.08}$$
+```
+φ = − ∫ E_T · dl         ...(1.08)
 
-$$\varphi = -\int \frac{Q}{4\pi\varepsilon_0} \left(\frac{1}{r_1^2} - \frac{1}{r_2^2}\right) dr \tag{1.09}$$
+        Q     ⎛  1      1  ⎞
+φ = − ∫ ———— ⎜ ——— − ——— ⎟ dr   ...(1.09)
+       4πε₀  ⎝  r₁²   r₂² ⎠
 
-$$\varphi = \frac{Q}{4\pi\varepsilon_0} \left(\frac{1}{r_1} - \frac{1}{r_2}\right) \tag{1.10}$$
+      Q    ⎛  1     1  ⎞
+φ = ———— ⎜ ——— − ——— ⎟          ...(1.10)
+     4πε₀ ⎝  r₁    r₂ ⎠
+```
 
 By substituting, we get the potential everywhere:
 
-$$\varphi = \frac{Q}{4\pi\varepsilon_0} \left(\frac{1}{\sqrt{x^2+y^2+(z-D)^2}} - \frac{1}{\sqrt{x^2+y^2+(z+D)^2}}\right) \tag{1.11}$$
+```
+      Q    ⎛          1                        1           ⎞
+φ = ———— ⎜ ———————————————————— − ———————————————————— ⎟   ...(1.11)
+     4πε₀ ⎝ √(x²+y²+(z−D)²)      √(x²+y²+(z+D)²)    ⎠
+```
 
-Getting values of **φ** at different points:
+**Values of φ at different points:**
 
-- At (0, 0, 0):
-$$\varphi = 0 \text{ V} \tag{1.12}$$
+- At (0, 0, 0):  
+  `φ = 0 V`  ...(1.12)
 
-- At (−10, −10, 5):
-$$\varphi = 0.2332386743 \text{ V} \tag{1.13}$$
+- At (−10, −10, 5):  
+  `φ = 0.2332386743 V`  ...(1.13)
 
-- At (7, 7, 7):
-$$\varphi = 0.624317043 \text{ V} \tag{1.14}$$
+- At (7, 7, 7):  
+  `φ = 0.624317043 V`  ...(1.14)
 
 ---
 
 #### 1.1.2 Finding Surface Charge Density on the Infinite Plane
 
-*Figure 1.3: Added an infinite straight line below the point charge to calculate surface charge density on it.*
-
 By using Gauss's law:
 
-$$\oiint_S \vec{E_T} \cdot d\vec{S} = \frac{\sum Q_{enclosed}}{\varepsilon_0} \tag{1.15}$$
+```
+∯ E_T · dS = ΣQ_enclosed / ε₀      ...(1.15)
+ S
+```
 
 By knowing:
 
-$$Q_{enclosed} = \sigma \times S \tag{1.16}$$
+```
+Q_enclosed = σ × S      ...(1.16)
+```
 
 Where **σ** is the surface charge density.
 
-We will only take the Z-component of the electrical field as it is the only component parallel to the area vector; the other components are perpendicular to it and are zeroed by the dot product:
+We will only take the Z-component of the electrical field as it is the only component parallel to the area vector; the other components are perpendicular and zeroed by the dot product:
 
-$$E_{z_T} \times S = \frac{\sigma \times S}{\varepsilon_0} \tag{1.17}$$
+```
+E_zT × S = (σ × S) / ε₀      ...(1.17)
 
-$$\sigma = \varepsilon_0 \, E_{z_T} \tag{1.18}$$
-
-*Figure 1.4: Getting the Z component of E₁ and E₂.*
+σ = ε₀ · E_zT               ...(1.18)
+```
 
 Getting that:
 
-$$\vec{E}_{z_1} = |E_1| \cos(\theta)(-\hat{z}) \tag{1.19}$$
-
-$$\vec{E}_{z_2} = |E_2| \cos(\theta)(-\hat{z}) \tag{1.20}$$
+```
+E_z1 = |E₁| cos(θ) (−ẑ)     ...(1.19)
+E_z2 = |E₂| cos(θ) (−ẑ)     ...(1.20)
+```
 
 Where:
 
-$$\cos(\theta) = \frac{D}{|r|} \tag{1.21}$$
+```
+cos(θ) = D / |r|             ...(1.21)
+```
 
 By substituting into equation (1.18) from equations (1.21), (1.19), and (1.07):
 
-$$\sigma = \varepsilon_0 \frac{1}{4\pi\varepsilon_0} \left(\frac{Q}{|r_1|^2} + \frac{|-Q|}{|r_2|^2}\right) \frac{D}{|r|} (-\hat{z}) \tag{1.22}$$
+```
+         1    ⎛   Q       |−Q|  ⎞   D
+σ = ε₀ ———— ⎜ ———— + ———— ⎟ × ——— (−ẑ)    ...(1.22)
+        4πε₀ ⎝  |r₁|²   |r₂|² ⎠   |r|
+```
 
 As y = 0, z = 0 on the x-axis:
 
-$$|r_1| = |r_2| = |r| = \sqrt{x^2 + D^2} \tag{1.23}$$
+```
+|r₁| = |r₂| = |r| = √(x² + D²)     ...(1.23)
+```
 
 By updating equation (1.22):
 
-$$\sigma = \frac{-QD}{2\pi|r|^3} \tag{1.24}$$
+```
+       −QD
+σ = —————————      ...(1.24)
+      2π|r|³
 
-$$\sigma = \frac{-QD}{2\pi\sqrt{(x^2+D^2)^3}} \tag{1.25}$$
+          −QD
+σ = ———————————————      ...(1.25)
+     2π √(x² + D²)³
+```
 
-Getting values of **σ** at different points:
+**Values of σ at different points:**
 
-- At (0, 0, 0):
-$$\sigma = -1.273239545 \times 10^{-11} \text{ C/m}^2 \tag{1.26}$$
+- At (0, 0, 0):  
+  `σ = −1.273239545 × 10⁻¹¹ C/m²`  ...(1.26)
 
-- At (−5, 0, 0):
-$$\sigma = -4.501581581 \times 10^{-12} \text{ C/m}^2 \tag{1.27}$$
+- At (−5, 0, 0):  
+  `σ = −4.501581581 × 10⁻¹² C/m²`  ...(1.27)
 
-- At (10, 0, 0):
-$$\sigma = -1.138820069 \times 10^{-12} \text{ C/m}^2 \tag{1.28}$$
+- At (10, 0, 0):  
+  `σ = −1.138820069 × 10⁻¹² C/m²`  ...(1.28)
 
 ---
 
 ### 1.2 MATLAB Results
 
-**Listing 1.1:** *MATLAB code for calculating the Electric Potential at certain points.*
+**Listing 1.1:** MATLAB code for calculating the Electric Potential at certain points.
 
 ```matlab
 % Auther  : Mina Wael Tanagho Fahmy Sedrak
@@ -178,13 +230,21 @@ for i = 1:3
     (Q/(4*pi*e0))*((1./(sqrt(X(i).^2 + Y(i).^2 + (Z(i) - D).^2)))-...
          (1./(sqrt(X(i).^2 + Y(i).^2 + (Z(i) + D).^2))))
 end
+
+display(V);
 ```
 
-*Figure 1.5: MATLAB results part 1.*
+MATLAB output:
+```
+V =
+    0    0.2332    0.6243
+```
 
-We can compare between the hand analysis at equations (1.12), (1.13) and (1.14) and the MATLAB results; they agree with each other.
+We can compare between the hand analysis at equations (1.12), (1.13), and (1.14) and the MATLAB results — they agree with each other.
 
-**Listing 1.2:** *MATLAB code for plotting the surface charge density and marking certain values.*
+---
+
+**Listing 1.2:** MATLAB code for plotting the surface charge density and marking certain values.
 
 ```matlab
 % Auther  : Mina Wael Tanagho Fahmy Sedrak
@@ -223,9 +283,7 @@ xlabel("x-axis");
 ylabel("Surface Charge Density (C/m^2)");
 ```
 
-*Figure 1.6: MATLAB results part 2.*
-
-We can compare between the hand analysis at equations (1.26), (1.27) and (1.28) and the MATLAB results; they agree with each other.
+We can compare between the hand analysis at equations (1.26), (1.27), and (1.28) and the MATLAB results — they agree with each other.
 
 ---
 
@@ -233,29 +291,20 @@ We can compare between the hand analysis at equations (1.26), (1.27) and (1.28) 
 
 ### 2.1 Setting Up
 
-Starting with placing a sphere with radius equals 0.05 m as a point charge having a charge Q = 2×10⁻⁹ C and a material type of PEC at a distance D = 5 m from the x-y plane.
+Starting with placing a sphere with radius = 0.05 m as a point charge having Q = 2×10⁻⁹ C and material type PEC, at a distance D = 5 m from the x-y plane.
 
-*Figure 2.1: Placing the point charge.*
+Then placed the infinite surface from −100 to +100 in the x direction and −100 to +100 in the y direction, thickness = 1 m, with material type PEC.
 
-Then placed the infinite surface from −100 to +100 in the x direction and from −100 to +100 in the y direction, with a thickness of 1 m and a material type of PEC.
-
-*Figure 2.2: Placing the infinite plate.*
-
-Then added the straight line for the calculation of the surface charge density at the x-axis from −100 to +100.
-
-*Figure 2.3: Placing the infinite straight line.*
+Then added a straight line along the x-axis from −100 to +100 for the calculation of the surface charge density.
 
 ---
 
 ### 2.2 Finding Electrical Potential Everywhere
 
-By running the Set up solver and going to the 2D/3D Results, we get the potential everywhere as shown in **Figure 2.4** and **Figure 2.5**.
+By running the solver and going to the 2D/3D Results, we get the potential everywhere.
 
-*Figure 2.4: Potential Everywhere.*
-
-*Figure 2.5: Potential Everywhere Section view.*
-
-Then went to the Post-Processing Result Templates and calculated the potential at certain points: (0, 0, 0), (−10, −10, 5), (7, 7, 7).
+Then went to the Post-Processing Result Templates and calculated the potential at:
+(0, 0, 0), (−10, −10, 5), (7, 7, 7).
 
 **Table 2.1:** CST Result Templates
 
@@ -265,37 +314,41 @@ Then went to the Post-Processing Result Templates and calculated the potential a
 | Potential (Eₛ) @ (−10, −10, 5) | 0.226764068 |
 | Potential (Eₛ) @ (7, 7, 7) | 0.6174885631 |
 
-As we can see, the results are very close to the hand analysis and MATLAB results.
+The results are very close to the hand analysis and MATLAB results.
 
 ---
 
 ### 2.3 Finding Surface Charge Density on the Infinite Plane
 
-After placing the infinite straight line, we went to the Post-Processing Result Templates and plotted the surface charge density graph against the length in metres, as in **Figure 2.7**. Then added some value markers to compare with hand analysis and MATLAB results, as in **Figure 2.8**.
+After placing the infinite straight line, the surface charge density was plotted against the length in metres. Value markers were added to compare with hand analysis and MATLAB results.
 
-*Figure 2.7: Plot of surface charge density vs length in m.*
-
-*Figure 2.8: Marking the values we are interested in and enabling the legend.*
-
-As we can see, the plot is the same as the MATLAB plot. Also, by comparing values from hand analysis equations at (1.26), (1.27) and (1.28), they are very close.
+The CST plot matches the MATLAB plot. Comparing values from hand analysis equations (1.26), (1.27), and (1.28) confirms they are very close.
 
 ---
 
 ## 3 Comparison Between Results
 
-Calculating the error in the potential result at point (−10, −10, 5) from CST and hand analysis:
+Calculating the error in the potential at point (−10, −10, 5) between CST and hand analysis:
 
-$$Error\ (\%) = \frac{|0.226764068 - 0.2332386743|}{0.226764068} \times 100 = 2.855\% \tag{3.1}$$
+```
+         |0.226764068 − 0.2332386743|
+Error = ————————————————————————————— × 100 = 2.855%    ...(3.1)
+                0.226764068
+```
 
-Calculating the error in the surface charge density result at point (−5, 0, 0) from CST and hand analysis:
+Calculating the error in the surface charge density at point (−5, 0, 0) between CST and hand analysis:
 
-$$Error\ (\%) = \frac{|-4.7094238 \times 10^{-12} - (-4.501581581 \times 10^{-12})|}{-4.7094238 \times 10^{-12}} \times 100 = 4.413\% \tag{3.2}$$
+```
+         |−4.7094238×10⁻¹² − (−4.501581581×10⁻¹²)|
+Error = ————————————————————————————————————————————— × 100 = 4.413%    ...(3.2)
+                    −4.7094238×10⁻¹²
+```
 
 Both errors are very small and therefore acceptable.
 
-The reason these errors occur:
+**Reason for the errors:**
 
 - **Math (Hand Analysis):** Infinite, continuous, and perfect.
-- **CST:** Finite, meshed, and limited by the size of the box.
+- **CST:** Finite, meshed, and limited by the size of the simulation box.
 
-> **Note:** The plate used in CST is not infinite — it has an area of 40,000 m² (200 × 200 metres).
+> **Note:** The plate used in CST is not truly infinite — it has an area of 40,000 m² (200 × 200 metres).
